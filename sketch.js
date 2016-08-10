@@ -6,8 +6,27 @@ function circle(x, y, diameter) {
   ellipse(x, y, diameter, diameter);
 }
 
+function polkaDots(color1, color2) {
+  var x = 0;
+  var y = 0;
+  var dotSize = 30;
+  noStroke();
+  background(color1);
+  while(y < height+dotSize) {
+    while(x < width+dotSize) {
+      fill(color2);
+      circle(x, y, dotSize);
+      x = x + 2*dotSize;
+    }
+    x = 0;
+    y = y + 2*dotSize;
+  }
+}
+
+
 function setup() {
   createCanvas(1000,1000);
+   polkaDots("magenta", "cyan");
 }
 
 function draw() {
